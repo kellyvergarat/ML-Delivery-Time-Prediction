@@ -72,4 +72,18 @@ This will start the Flask server and load the trained model.
 2. Run the cells in the notebook to send a sample request to the Flask server and receive the predicted delivery time.
 
 ### Running the model with Docker
+To run the model using Docker, follow these steps:
+1. Make sure you have Docker installed on your local machine.
+2. Open command line and go to the root directory of the project.
+3. Build the Docker image using the following command:
+```bash
+docker build -t food_delivery_model .
+```
+4. Run the Docker container using the following command:
+```bash
+docker run --it --rm -p 9696:9696 food_delivery_model
+```
+5. The Flask server will start inside the Docker container.
+6. Open the predict_test notebook in the notebooks directory.
+7. Run the cells in the notebook to send a sample request to the Flask server and receive the predicted delivery time.
 
