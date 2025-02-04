@@ -1,6 +1,6 @@
 # Food Delivery Time Prediction
 
-![Delivery guy](image.png)
+![Delivery guy](src/image.png)
 
 ### Introduction
 This project aims to develop a machine learning model using linear regression to predict food delivery times based on various contextual and operational factors. It serves as the capstone project for the Machine Learning Zoomcamp by DataTalksClub and focuses on optimizing delivery efficiency in the food logistics industry.
@@ -86,4 +86,43 @@ docker run --it --rm -p 9696:9696 food_delivery_model
 5. The Flask server will start inside the Docker container.
 6. Open the predict_test notebook in the notebooks directory.
 7. Run the cells in the notebook to send a sample request to the Flask server and receive the predicted delivery time.
+
+### Cloud deployment
+
+The app is deployed to AWS EC2 instance. You can use it via the following link:
+http://food-delivery-model-env.eba-mkkwnvyp.us-east-2.elasticbeanstalk.com/predict
+
+You can run the elastic bean application locally by following the steps below:
+1. Activate the virtual environment
+```bash
+run pipenv shell
+```
+2. Run docker container through EB CLI
+```bash
+eb init -p docker -r us-east-2 food-delivery-model-serving
+```
+2. Run elastic beanstalk locally
+```bash
+eb local run --port 9696
+```
+3. Access the application through url http://localhost:9696/
+
+
+**Steps to create the elastic beanstalk environment and deploy EB application to AWS**
+1. Create the elastic beanstalk application
+```bash
+eb create food-delivery-model-env
+```
+
+**Test the cloud deployed model by running the following command from the main directory**
+```bash
+python scripts/test.py
+```
+
+Video: 
+
+![aws deployment](src/awsdeployment-ezgif.com-video-to-gif-converter.gif)
+
+
+
 
