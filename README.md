@@ -37,3 +37,39 @@ Key Features:
 Model performance was evaluated using Root Mean Squared Error (RMSE) and R-squared. RMSE was chosen as it penalizes larger errors and provides a measure in the same units as the target variable (minutes). R-squared provides insight on the variance explained.
 
 ### Repository Structure
+The repository is organized as follows:
+- **data**: Contains the dataset used for model training and evaluation.
+- **models**: Contains the trained model saved as a pickle file.
+- **notebooks**: Contains Jupyter notebooks for data exploration, model training, evaluation and test flask served model.
+- **scripts**: Contains Python scripts for model training and evaluation.
+
+### Training and running the model locally with Python
+To run the model locally, follow these steps:
+1. Clone the repository to your local machine.
+2. Open command line and go to notebooks directory.
+3. Install the required libraries using the following command:
+```bash
+pip install -r requirements.txt
+```
+4. Go to scripts directory and run the following command:
+```bash
+python train.py
+```
+5. The model will be trained and saved in the models directory.
+6. To evaluate the model, run the following command:
+```bash
+python predict.py
+```
+
+### Running the flask served model with Notebook
+To run the model using a Jupyter notebook, follow these steps:
+1. Inside scripts directory, run the following command:
+```bash
+python predict.py
+```
+This will start the Flask server and load the trained model.
+2. Open the predict_test notebook in the notebooks directory.
+2. Run the cells in the notebook to send a sample request to the Flask server and receive the predicted delivery time.
+
+### Running the model with Docker
+
